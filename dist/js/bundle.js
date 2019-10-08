@@ -3838,14 +3838,14 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
-/***/ "./src/css/styles.css":
-/*!****************************!*\
-  !*** ./src/css/styles.css ***!
-  \****************************/
+/***/ "./src/css/styles.less":
+/*!*****************************!*\
+  !*** ./src/css/styles.less ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/css/styles.css?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/css/styles.less?");
 
 /***/ }),
 
@@ -3874,13 +3874,13 @@ eval("__webpack_require__.r(__webpack_exports__);\nconsole.log('Imported Module'
 /***/ }),
 
 /***/ 0:
-/*!*******************************************************************!*\
-  !*** multi babel-polyfill ./src/js/index.js ./src/css/styles.css ***!
-  \*******************************************************************/
+/*!********************************************************************!*\
+  !*** multi babel-polyfill ./src/js/index.js ./src/css/styles.less ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! babel-polyfill */\"./node_modules/babel-polyfill/lib/index.js\");\n__webpack_require__(/*! /Users/shaunbloom/Documents/webs/shaunbloom.com-Version2/src/js/index.js */\"./src/js/index.js\");\nmodule.exports = __webpack_require__(/*! /Users/shaunbloom/Documents/webs/shaunbloom.com-Version2/src/css/styles.css */\"./src/css/styles.css\");\n\n\n//# sourceURL=webpack:///multi_babel-polyfill_./src/js/index.js_./src/css/styles.css?");
+eval("__webpack_require__(/*! babel-polyfill */\"./node_modules/babel-polyfill/lib/index.js\");\n__webpack_require__(/*! /Users/shaunbloom/Documents/webs/shaunbloom.com-Version2/src/js/index.js */\"./src/js/index.js\");\nmodule.exports = __webpack_require__(/*! /Users/shaunbloom/Documents/webs/shaunbloom.com-Version2/src/css/styles.less */\"./src/css/styles.less\");\n\n\n//# sourceURL=webpack:///multi_babel-polyfill_./src/js/index.js_./src/css/styles.less?");
 
 /***/ })
 
