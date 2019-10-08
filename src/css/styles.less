@@ -1,9 +1,139 @@
-@color: green;
+/* @color: green; */
 
 body {
-  background-color: @color;
+	background: url(http://images.shaunbloom.com/bg3.jpg) 0 0 #0a0a0a fixed;
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #FFF;
+}
 
-  h3 {
-  	color: white;
-  }
+.framework-nav {
+    height: 1.87em;
+    padding: .31em 0 .31em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: -2.5em;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    ul {
+	    padding: 0;
+	    margin: 0;
+	    z-index: 1;
+
+	    li {
+		    list-style-type: none;
+		    display: inline-block;
+		    width: 32%;
+		    margin: 0 auto;
+		    text-align: center;
+
+		    a {
+				color: white;
+			    text-decoration: none;
+			    text-shadow: .25em .25em #000;
+			    font-size: .81em;
+		    }
+		    a.selected {
+		    	font-weight: bold;
+    			font-size: 1.25em;
+		    }
+		    a:hover {
+			  color: red;
+			}
+		}
+	}
+}
+
+#wrapper {
+	width: 50em;
+    margin: 0 auto;
+
+    #content {
+    	position: absolute;
+	    border: 1px solid #FFF;
+	    width: 43.75em;
+	    height: 25em;
+	    display: block;
+	    top: 14.65em;
+	    z-index: 90;
+
+	    #main {
+		    position: absolute;
+		    margin: 0 auto;
+		    width: 43.75em;
+		    bottom: 25.31em;
+    		height: 2.5em;
+		    padding: 0;
+
+		    nav ul {
+			    margin: 0;
+			    padding: 0;
+
+			    a {
+				    text-decoration: none;
+				    color: #FFF;
+				}
+				a:hover {
+				  color: #F00;
+				}
+			}
+
+			.nav-link {
+			    display: inline-block;
+			    font-size: 1.87em;
+			    font-weight: bold;
+			    text-shadow: #000 .31em .31em .18em;
+			    text-align: center;
+			    padding: 0 1.28em 0 0;
+			}
+	    }
+
+	    .background {
+	    	background-color: #000000;
+		    background-image: url(http://images.shaunbloom.com/face.png);
+		    background-repeat: no-repeat;
+		    display: block;
+		    height: 23.12em;
+		    padding: .93em 1.56em;
+		    position: relative;
+		    width: 40.62em;
+		    background-position: 23.56em 0;
+	    }
+
+	    article {
+		    display: block;
+		    overflow: hidden;
+		    width: 25em;
+	    }
+	}
+
+    .drop-shadow {
+	    box-shadow: 0 1.25em 6.25em #000;
+    }
+    .twinkle {
+	    background: url(http://images.shaunbloom.com/twinkle.png) repeat scroll 0 0 transparent;
+	    height: 5.31em;
+	    position: absolute;
+	    right: 7.62em;
+	    top: 5.31em;
+	    width: 4.68em;
+	    display: block;
+	}
+
+
+	#home-page {
+		td.name {
+	    	font-weight: bold;
+	    	line-height: 2.5em;
+	    	vertical-align: top;
+	    	text-align: right;
+		}
+		td.value.pad {
+			padding-top: 13px;
+		}
+	}
 }
