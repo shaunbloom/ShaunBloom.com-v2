@@ -1,6 +1,7 @@
-const path 				= require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path 				   = require('path');
+const HtmlWebpackPlugin    = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin    = require('copy-webpack-plugin');
 
 module.exports = {
 	entry: {
@@ -24,7 +25,11 @@ module.exports = {
 		      filename: 'css/styles.css',
 		      template: './src/css/styles.css',
 		      ignoreOrder: false // Enable to remove warnings about conflicting order
-		})
+		}),
+		new CopyWebpackPlugin([{
+			from:'./src/img',
+			to:'img'
+		}])
 	],
 	module: {
 		rules: [{
@@ -43,6 +48,7 @@ module.exports = {
                 { loader: 'less-loader', options: { sourceMap: true } }
             ],
         }
+        	
 	    // {
      //        test: /\.css$/,
      //    	use: [
