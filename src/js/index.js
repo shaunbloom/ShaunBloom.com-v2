@@ -3,6 +3,9 @@ import { elements, sections, clearContent, renderMainView } from './base';
 import * as homeView from './views/homeView';
 
 
+homeView.renderView();
+
+
 // Framework Nav click event listener
 elements.frameworkNav.addEventListener('click', e => {
 	e.preventDefault();
@@ -19,6 +22,12 @@ elements.mainNav.addEventListener('click', e => {
 
 	// Render the new sections view
 	renderMainView(section);
+});
+
+elements.homePageBackground.addEventListener('click', e => {
+	e.preventDefault();
+	clearContent(elements.homePageBackground);
+	homeView.renderView();
 });
 
 document.querySelector('#close').addEventListener('click', e => {

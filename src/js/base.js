@@ -1,4 +1,5 @@
 import * as artView from './views/artView';
+import * as contactView from './views/contactView';
 import * as resumeView from './views/resumeView';
 import * as portfolioView from './views/portfolioView';
 
@@ -6,7 +7,8 @@ export const elements = {
 	mainNav: document.querySelector('.main-nav'),
 	frameworkNav: document.querySelector('.framework-nav'),
 	dynamicWrapper: document.querySelector('#dynamic-content'),
-	dynamicContent: document.querySelector('#dynamic-content .content')
+	dynamicContent: document.querySelector('#dynamic-content .content'),
+	homePageBackground: document.querySelector('.background')
 
 };
 
@@ -26,6 +28,10 @@ export const renderMainView = view => {
 		case sections.ART:
 			artView.renderView();
 			break;
+		case sections.CONTACT:
+			clearContent(elements.homePageBackground);
+			contactView.renderView();
+			break;
 		case sections.RESUME:
 			resumeView.renderView();
 			break;
@@ -34,6 +40,8 @@ export const renderMainView = view => {
 			break;
 	}
 
-	// Show dynamic content element
-	elements.dynamicWrapper.style.display = 'block';
+	// Show dynamic content element for all but the Contact page
+	if (view !== sections.CONTACT) {
+		elements.dynamicWrapper.style.display = 'block';
+	}
 };
