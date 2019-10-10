@@ -5,7 +5,9 @@ import * as portfolioView from './views/portfolioView';
 export const elements = {
 	mainNav: document.querySelector('.main-nav'),
 	frameworkNav: document.querySelector('.framework-nav'),
-	dynamicContent: document.querySelector('#dynamic-content')
+	dynamicWrapper: document.querySelector('#dynamic-content'),
+	dynamicContent: document.querySelector('#dynamic-content .content')
+
 };
 
 export const sections = {
@@ -31,4 +33,7 @@ export const renderMainView = view => {
 			portfolioView.renderView();
 			break;
 	}
+
+	// Show dynamic content element
+	elements.dynamicWrapper.style.display = 'block';
 };

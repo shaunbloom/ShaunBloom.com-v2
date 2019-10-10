@@ -20,3 +20,8 @@ elements.mainNav.addEventListener('click', e => {
 	// Render the new sections view
 	renderMainView(section);
 });
+
+document.querySelector('#close').addEventListener('click', e => {
+	elements.dynamicWrapper.style.display = 'none';
+	clearContent(elements.dynamicContent);
+});
