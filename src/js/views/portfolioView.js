@@ -3,6 +3,7 @@ import { elements } from '../base';
 export const renderView = (portfolioData) => {
 	const markup = `
 		<section id="portfolio-page" class="dynamic-content main-content">
+		<h1>ART</h1>
 		${ renderArticle(portfolioData) }
 		</section>
 	`;
@@ -10,12 +11,11 @@ export const renderView = (portfolioData) => {
 	elements.dynamicContent.insertAdjacentHTML('beforeend', markup);
 };
 
-
 const renderArticle = (data) => {
 	let article = "";
 
 	data.forEach(d => {
-		 article  = article + `
+		article  = article + `
 			<article class="${d.class}">
 	          <a href="${d.url}">
 	            <img class="img-responsive img-border img-left hidden-xs" src="${d.imgSrc}" alt="${d.title}"></a>

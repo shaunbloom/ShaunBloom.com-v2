@@ -3,6 +3,7 @@ import * as contactView from './views/contactView';
 import * as resumeView from './views/resumeView';
 import * as portfolioView from './views/portfolioView';
 import { portfolioData } from './models/portfolio-data';
+import { artData } from './models/art-data';
 
 export const elements = {
 	mainNav: document.querySelector('.main-nav'),
@@ -27,7 +28,7 @@ export const clearContent = parent => {
 export const renderMainView = view => {
 	switch (view) {
 		case sections.ART:
-			artView.renderView();
+			artView.renderView(artData);
 			break;
 		case sections.CONTACT:
 			clearContent(elements.homePageBackground);
