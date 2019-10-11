@@ -4,6 +4,7 @@ import * as resumeView from './views/resumeView';
 import * as portfolioView from './views/portfolioView';
 import { portfolioData } from './models/portfolio-data';
 import { artData } from './models/art-data';
+import { resumeData } from './models/resume-data';
 
 export const elements = {
 	mainNav: document.querySelector('.main-nav'),
@@ -35,7 +36,7 @@ export const renderMainView = view => {
 			contactView.renderView();
 			break;
 		case sections.RESUME:
-			resumeView.renderView();
+			resumeView.renderView(resumeData);
 			break;
 		case sections.PORTFOLIO:
 			portfolioView.renderView(portfolioData);
