@@ -1,6 +1,6 @@
 export const portfolioData = [
 	{
-		"class"		 : "maverickcatering",
+		"class"		 : "maverickcatering top",
 		"url"		 : "http://maverickcatering.com",
 		"imgSrc"	 : "http://images.shaunbloom.com/maverick-thumb.png",
 		"title"		 : "MaverickCatering.com",

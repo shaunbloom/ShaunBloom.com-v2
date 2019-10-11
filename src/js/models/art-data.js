@@ -1,4 +1,4 @@
-[
+export const artData = [
 	{
 		"id": 18,
 		"title": "Shakur",
@@ -7,7 +7,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/tupac-a-thumb.gif",
 		"originalThumbPath": "http://images.shaunbloom.com/art/tupac-b-thumb.jpg",
 		"year": "16",
-		"purchase": "true",
+		"purchase": true,
 		"smallpaper": "https://www.facebook.com/shaunbloomart/photos/a.1752883114928781.1073741832.1732130217004071/1752883178262108/?type=3&theater",
 		"linkText": "Current Portrait"
 	},
@@ -19,7 +19,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/steve-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/steve-b-thumb.jpg",
 		"year": "16",
-		"purchase": "true",
+		"purchase": true,
 		"smallpaper": "https://www.etsy.com/listing/466657293/steve-jobs-portrait-2-pencil?ref=shop_home_active_1",
 		"linkText": "Purchase Options"
 	},
@@ -31,7 +31,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/walter-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/walter-b-thumb.jpg",
 		"year": "16",
-		"purchase": "true",
+		"purchase": true,
 		"smallpaper": "https://www.etsy.com/listing/449052602/walter-white-portrait?ref=related-0",
 		"linkText": "Purchase Options"
 	},
@@ -43,7 +43,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/dave-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/dave-b-thumb.jpg",
 		"year": "16",
-		"purchase": "true",
+		"purchase": true,
 		"smallpaper": "https://www.etsy.com/listing/385822784/dave-grohl-portrait?ref=shop_home_active_7",
 		"linkText": "Purchase Options"
 	},
@@ -55,7 +55,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/curt5-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/curt5-b-thumb.jpg",
 		"year": "16",
-		"purchase": "true",
+		"purchase": true,
 		"smallpaper": "https://www.etsy.com/listing/385824036/kurt-cobain-portrait?ref=shop_home_active_6",
 		"linkText": "Purchase Options"
 	},
@@ -67,7 +67,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/chuck-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/chuck-b-thumb.jpg",
 		"year": "11",
-		"purchase": "true",
+		"purchase": true,
 		"smallpaper": "https://www.etsy.com/listing/385824910/chuck-close-portrait?ref=shop_home_active_5",
 		"linkText": "Purchase Options"
 	},
@@ -79,7 +79,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/curt4-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/curt4-b-thumb.jpg",
 		"year": "11",
-		"purchase": "true",
+		"purchase": true,
 		"smallpaper": "https://www.etsy.com/listing/385877782/kurt-cobain-portrait?ref=shop_home_active_1",
 		"linkText": "Purchase Options"
 	},
@@ -91,7 +91,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/curt3-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/curt3-b-thumb.jpg",
 		"year": "06",
-		"purchase": "true",
+		"purchase": true,
 		"smallpaper": "https://www.etsy.com/listing/399348883/kurt-cobain-portrait?ref=shop_home_active_2",
 		"linkText": "Purchase Options"
 	},
@@ -103,7 +103,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/jaco2-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/jaco2-b-thumb.jpg",
 		"year": "06",
-		"purchase": "true",
+		"purchase": true,
 		"smallpaper": "https://www.etsy.com/listing/463399529/jaco-pastorius-portrait-2-pencil?ref=listing-shop-header-3",
 		"linkText": "Purchase Options"
 	},
@@ -115,7 +115,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/curt2-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/curt2-b-thumb.jpg",
 		"year": "05",
-		"purchase": "true",
+		"purchase": true,
 		"smallpaper": "https://www.etsy.com/listing/385842030/kurt-cobain-portrait?ref=shop_home_active_3",
 		"linkText": "Purchase Options"
 	},
@@ -127,7 +127,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/eddie-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/eddie-a-thumb.jpg",
 		"year": "05",
-		"purchase": "false",
+		"purchase": false,
 		"smallpaper": "",
 		"linkText": ""
 	},
@@ -139,7 +139,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/man-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/man-a-thumb.jpg",
 		"year": "05",
-		"purchase": "false",
+		"purchase": false,
 		"smallpaper": "",
 		"linkText": ""
 	},
@@ -151,7 +151,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/jaco-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/jaco-b-thumb.jpg",
 		"year": "97",
-		"purchase": "false",
+		"purchase": false,
 		"smallpaper": "",
 		"linkText": ""
 	},
@@ -163,7 +163,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/jim-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/jim-b-thumb.jpg",
 		"year": "97",
-		"purchase": "false",
+		"purchase": false,
 		"smallpaper": "",
 		"linkText": ""
 	},
@@ -175,7 +175,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/curt1-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/curt1-b-thumb.jpg",
 		"year": "94",
-		"purchase": "true",
+		"purchase": true,
 		"smallpaper": "https://www.etsy.com/listing/399338437/kurt-cobain-portrait-free-hand?ref=shop_home_active_4",
 		"linkText": "Purchase Options"
 	},
@@ -187,7 +187,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/james-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/james-b-thumb.jpg",
 		"year": "91",
-		"purchase": "false",
+		"purchase": false,
 		"smallpaper": "",
 		"linkText": ""
 	},
@@ -199,7 +199,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/kirk-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/kirk-b-thumb.jpg",
 		"year": "91",
-		"purchase": "false",
+		"purchase": false,
 		"smallpaper": "",
 		"linkText": ""
 	},
@@ -211,7 +211,7 @@
 		"thumbPath": "http://images.shaunbloom.com/art/lars-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/lars-b-thumb.jpg",
 		"year": "91",
-		"purchase": "false",
+		"purchase": false,
 		"smallpaper": "",
 		"linkText": ""
 	},
@@ -223,8 +223,8 @@
 		"thumbPath": "http://images.shaunbloom.com/art/jason-a-thumb.jpg",
 		"originalThumbPath": "http://images.shaunbloom.com/art/jason-b-thumb.jpg",
 		"year": "91",
-		"purchase": "false",
+		"purchase": false,
 		"smallpaper": "",
 		"linkText": ""
 	}
-]
+];

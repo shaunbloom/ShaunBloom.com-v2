@@ -1,164 +1,39 @@
 import { elements } from '../base';
 
-export const renderView = () => {
-	const markup = `
-		<section id="art-page" class="dynamic-content main-content">
-            <h1>Art</h1>
-            <article>
-              <a class="thumb" href="art/art_18.html">
-                <img name="tupac" src="http://images.shaunbloom.com/art/tupac-a-thumb.gif" class="section#art-page article img.active">
-                <footer>Shakur '16</footer>
-              </a>
-              <hr>
-              <a href="https://www.facebook.com/shaunbloomart/photos/a.1752883114928781.1073741832.1732130217004071/1752883178262108/?type=3&amp;theater" class="purchase-link" target="_blank">Current Portrait</a>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_17.html">
-                <img name="steve" src="http://images.shaunbloom.com/art/steve-a-thumb.jpg" class="section#art-page article img.active">
-                <footer>Jobs '16</footer>
-              </a>
-              <hr>
-              <a href="" class="purchase-link" target="_blank">purchase options</a>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_15.html">
-                <img name="walter" src="http://images.shaunbloom.com/art/walter-a-thumb.jpg" class="section#art-page article img.active">
-                <footer>White '16</footer>
-              </a>
-              <hr>
-              <a href="https://www.etsy.com/listing/449052602/walter-white-portrait?ref=related-0" class="purchase-link" target="_blank">purchase options</a>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_14.html">
-                <img name="dave" src="http://images.shaunbloom.com/art/dave-a-thumb.jpg" class="section#art-page article img.active">
-                <footer>Grohl '16</footer>
-              </a>
-              <hr>
-              <a href="https://www.etsy.com/listing/385822784/dave-grohl-portrait?ref=shop_home_active_7" class="purchase-link" target="_blank">purchase options</a>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_00.html">
-                <img name="curt5" src="http://images.shaunbloom.com/art/curt5-a-thumb.jpg" class="section#art-page article img.active">
-                <footer>Cobain '16</footer>
-              </a>
-              <hr>
-              <a href="https://www.etsy.com/listing/385824036/kurt-cobain-portrait?ref=shop_home_active_6" class="purchase-link" target="_blank">purchase options</a>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_05.html">
-                <img name="chuck" src="http://images.shaunbloom.com/art/chuck-a-thumb.jpg" class="section#art-page article img.active">
-                <footer>Close '11 </footer>
-              </a>
-              <hr>
-              <a href="https://www.etsy.com/listing/385824910/chuck-close-portrait?ref=shop_home_active_5" class="purchase-link" target="_blank">purchase options</a>
-            </article>
-            
-            <article>
-              <a class="thumb" href="art/art_04.html">
-                <img name="curt4" src="http://images.shaunbloom.com/art/curt4-a-thumb.jpg">
-                <footer>Cobain '11</footer>
-              </a>
-              <hr>
-              <a href="https://www.etsy.com/listing/385877782/kurt-cobain-portrait?ref=shop_home_active_1" class="purchase-link" target="_blank">purchase options</a>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_03.html">
-                <img name="curt3" src="http://images.shaunbloom.com/art/curt3-a-thumb.jpg">
-                <footer>Cobain 06'</footer>
-              </a>
-              <hr>
-              <a href="https://www.etsy.com/listing/399348883/kurt-cobain-portrait?ref=shop_home_active_2" class="purchase-link" target="_blank">purchase options</a>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_16.html">
-                <img name="jaco2" src="http://images.shaunbloom.com/art/jaco2-a-thumb.jpg">
-                <footer>Pastorius '06</footer>
-              </a>
-              <hr>
-              <a href="https://www.etsy.com/listing/463399529jaco-pastorius-portrait-2-pencil?ref=listing-shop-header-3" class="purchase-link" target="_blank">purchase options</a>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_02.html">
-                <img name="curt2" src="http://images.shaunbloom.com/art/curt2-a-thumb.jpg">
-                <footer>Cobain '05</footer>
-              </a>
-              <hr>
-              <a href="https://www.etsy.com/listing/385842030/kurt-cobain-portrait?ref=shop_home_active_3" class="purchase-link" target="_blank">purchase options</a>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_06.html">
-                <img name="eddie" src="http://images.shaunbloom.com/art/eddie-a-thumb.jpg" class="section#art-page article img.active">
-                <footer>Vedder '05</footer>
-              </a>
-              <hr>
-              <span class="purchase-link-blank"><br></span>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_09.html">
-                <img name="man" src="http://images.shaunbloom.com/art/man-a-thumb.jpg">
-                <footer>Man '05</footer>
-              </a>
-              <hr>
-              <span class="purchase-link-blank"><br></span>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_07.html">
-                <img name="jaco" src="http://images.shaunbloom.com/art/jaco-a-thumb.jpg">
-                <footer>Pastorius '97</footer>
-              </a>
-              <hr>
-              <span class="purchase-link-blank"><br></span>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_08.html">
-                <img name="jim" src="http://images.shaunbloom.com/art/jim-a-thumb.jpg">
-                <footer>Carrey '97</footer>
-              </a>
-              <hr>
-              <span class="purchase-link-blank"><br></span>
-            </article>                
-            <article>
-              <a class="thumb" href="art/art_01.html">
-                <img name="curt1" src="http://images.shaunbloom.com/art/curt1-a-thumb.jpg">
-                <footer>Cobain '94</footer>
-              </a>
-              <hr>
-              <a href="https://www.etsy.com/listing/399338437/kurt-cobain-portrait-free-hand?ref=shop_home_active_4" class="purchase-link" target="_blank">purchase options</a>
-              </article>
-            <article>
-              <a class="thumb" href="art/art_10.html">
-                <img name="james" src="http://images.shaunbloom.com/art/james-a-thumb.jpg">
-                <footer>Hetfield '91</footer>
-              </a>
-              <hr>
-              <span class="purchase-link-blank"><br></span>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_11.html">
-                <img name="kirk" src="http://images.shaunbloom.com/art/kirk-a-thumb.jpg">
-                <footer>Hammet '91</footer>
-              </a>
-              <hr>
-              <span class="purchase-link-blank"><br></span>
-            </article>
-            <article>
-              <a class="thumb" href="art/art_12.html">
-                <img name="lars" src="http://images.shaunbloom.com/art/lars-a-thumb.jpg">
-                <footer>Ulrich '91</footer>
-              </a>
-              <hr>
-              <span class="purchase-link-blank"><br></span>
-              </article>        
-            <article>
-              <a class="thumb" href="art/art_13.html">
-                <img name="jason" src="http://images.shaunbloom.com/art/jason-a-thumb.jpg">
-                <footer>Newsted '91</footer>
-              </a>
-              <hr>
-              <span class="purchase-link-blank"><br></span>
-            </article>
-        </section> 
-	`;
+export const renderView = (artData) => {
+  	const markup = `
+        <section id="art-page" class="dynamic-content main-content">
+        <h1>ART</h1>
+        ${ renderArticle(artData) }
+        </section>
+    `;
 
-	elements.dynamicContent.insertAdjacentHTML('beforeend', markup);
+  	elements.dynamicContent.insertAdjacentHTML('beforeend', markup);
+};
+
+const renderArticle = (data) => {
+    let article = "";
+
+    data.forEach(d => {
+        article  = article + `  
+            <article>
+              <a class="thumb" href="art/art_${d.id}.html">
+                <img name="tupac" src="${d.thumbPath}" class="section#art-page article img.active">
+                <footer>${d.name.charAt(0).toUpperCase() + d.name.slice(1)} '${d.year}</footer>
+              </a>
+              <hr>
+              ${purchaseLink(d)}
+            </article>
+      `;
+    });
+
+    return article;
+};
+
+const purchaseLink = (d) => {
+    if (d.purchase) {
+      return `<a href="${d.smallpaper}" class="purchase-link" target="_blank">${d.linkText}</a>`;
+    }
+
+    return `<span class="purchase-link-blank"><br></span>`;
 };
