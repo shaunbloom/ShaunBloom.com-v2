@@ -1,4 +1,4 @@
-import { elements } from '../base';
+import { elements, clearContent } from '../base';
 
 export const renderView = () => {
 	const markup = `
@@ -34,7 +34,7 @@ export const renderView = () => {
 			</table>
 		</article>
 	`;
-
+	clearContent(elements.homePageBackground);
 	elements.homePageBackground.insertAdjacentHTML('beforeend', markup);
 };
 

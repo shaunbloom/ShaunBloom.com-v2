@@ -11,6 +11,10 @@ export const elements = {
 	frameworkNav: document.querySelector('.framework-nav'),
 	dynamicWrapper: document.querySelector('#dynamic-content'),
 	dynamicContent: document.querySelector('#dynamic-content .content'),
+	dynamicClose: document.querySelector('#dynamic-content #close'),
+	artFullWrapper: document.querySelector('#art-full-page'),
+	artFullContent: document.querySelector('#art-full-page .content'),
+	artFullClose: document.querySelector('#art-full-page #close'),
 	homePageBackground: document.querySelector('.background')
 
 };
@@ -22,13 +26,29 @@ export const sections = {
 	PORTFOLIO : 'portfolio'
 };
 
-export const clearContent = parent => {
-	parent.innerHTML = '';
+export const noThumbnail = [
+	'eddie',
+	'man'
+];
+	
+
+export const clearContent = el => {
+
+	if (typeof el === "array") {
+
+		el.forEach(parent => {
+			parent.innerHTML = '';
+		})
+
+		return;
+	}
+	el.innerHTML = '';
 };
 
 export const renderMainView = view => {
 	switch (view) {
 		case sections.ART:
+			clearContent(elements.dynamicContent);
 			artView.renderView(artData);
 			break;
 		case sections.CONTACT:
