@@ -1,4 +1,4 @@
-import { elements } from '../base';
+import { elements, clearContent } from '../base';
 
 export const renderView = (artData) => {
   	const markup = `
@@ -7,7 +7,7 @@ export const renderView = (artData) => {
         ${ renderArticle(artData) }
         </section>
     `;
-
+    clearContent(elements.dynamicContent);
   	elements.dynamicContent.insertAdjacentHTML('beforeend', markup);
 };
 
@@ -16,9 +16,9 @@ const renderArticle = (data) => {
 
     data.forEach(d => {
         article  = article + `  
-            <article>
-              <a class="thumb" href="art/art_${d.id}.html">
-                <img name="tupac" src="${d.thumbPath}" class="section#art-page article img.active">
+            <article class="art-full">
+              <a class="thumb"  title="Click for full view">
+                <img name="tupac" src="${d.thumbPath}" class="section#art-page article img"  data-name="${d.name}" data-year="${d.year}">
                 <footer>${d.name.charAt(0).toUpperCase() + d.name.slice(1)} '${d.year}</footer>
               </a>
               <hr>
