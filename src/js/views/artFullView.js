@@ -1,4 +1,4 @@
-import { elements, clearContent, noThumbnail } from '../base';
+import { elements, clearContent, noThumbnail, fadeElement } from '../base';
 
 export const renderView = name => {
 	const markup = `
@@ -8,9 +8,10 @@ export const renderView = name => {
     	</article>
     `;
 
-    clearContent(elements.artFullContent);
-  	elements.artFullContent.insertAdjacentHTML('beforeend', markup);
-  	elements.artFullWrapper.style.display = 'block';
+    //clearContent(elements.dynamicContent);
+  	elements.dynamicContent.insertAdjacentHTML('beforeend', markup);
+    fadeElement(elements.dynamicWrapper, 'in');
+  	//elements.artFullWrapper.style.display = 'block';
 };
 
 const renderThumbnail = name => {
