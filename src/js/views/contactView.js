@@ -1,4 +1,4 @@
-import { elements } from '../base';
+import { elements, clearContent } from '../base';
 
 export const renderView = () => {
 	const markup = `
@@ -27,9 +27,14 @@ export const renderView = () => {
                     <td class="name">Facebook:</td> 
                     <td class="value">&nbsp;&nbsp;<a href="http://www.facebook.com/shaun.bloom" target="_blank">www.facebook.com/shaun.bloom</a></td>    
                 </tr>
+                <tr>
+                    <td class="name">Github:</td> 
+                    <td class="value">&nbsp;&nbsp;<a href="https://github.com/shaunbloom/" target="_blank">https://github.com/shaunbloom/</a></td>    
+                </tr>
             </tbody></table>
         </article>
 	`;
 
+    clearContent(elements.homePageBackground);
 	elements.homePageBackground.insertAdjacentHTML('beforeend', markup);
 };

@@ -1,5 +1,5 @@
 //Global app controller
-import { elements, sections, clearContent, renderMainView } from './base';
+import { elements, sections, clearContent, renderMainView, fadeElement } from './base';
 import * as homeView from './views/homeView';
 import * as artFullView from './views/artFullView';
 
@@ -15,6 +15,9 @@ elements.frameworkNav.addEventListener('click', e => {
 
 // Main Nav click event listener
 elements.mainNav.addEventListener('click', e => {
+
+	console.log(e);
+
 	// Get section
 	const section = e.target.dataset.section;
 
@@ -32,9 +35,11 @@ elements.dynamicContent.addEventListener('click', e => {
 
 	// Clear the current dynamic content as we rerender upon closing the full page art
 	// 
-	clearContent(elements.dynamicContent);
-	elements.dynamicWrapper.style.display = 'none';
+	
+	fadeElement(elements.dynamicWrapper, 'out');
+	//clearContent(elements.dynamicContent);
 
+	elements.dynamicContent.classList.add('art-full-page');
 	// Render the new sections view
 	artFullView.renderView(name);
 });
@@ -45,10 +50,13 @@ elements.homePageBackground.addEventListener('click', e => {
 });
 
 elements.dynamicClose.addEventListener('click', e => {
-	elements.dynamicWrapper.style.display = 'none';
+	fadeElement(elements.dynamicWrapper, 'out');
+	//elements.dynamicContent.classList.remove('art-full-page');
+	//elements.dynamicWrapper.style.display = 'none';
 });
 
-elements.artFullClose.addEventListener('click', e => {
-	elements.artFullWrapper.style.display = 'none';
-	renderMainView(sections.ART);
-});
+// elements.artFullClose.addEventListener('click', e => {
+// 	fadeElement(elements.artFullWrapper, 'out');
+// 	clearContent(elements.artFullContent);
+// 	renderMainView(sections.ART);
+// });
