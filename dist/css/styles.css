@@ -7,17 +7,6 @@ body {
   font-family: Verdana, Geneva, sans-serif;
   color: #FFF;
 }
-/*.fade-out {
-	visibility: hidden;
-  	opacity: 0;
-  	transition: visibility 1s, opacity 1s linear;
-}
-
-.fade-in {
-	visibility: visible !important;
-  	opacity: 1;
-  	transition: visibility 1s, opacity 1s linear;
-}*/
 @-webkit-keyframes fade-out-init {
   0% {
     opacity: 1;
@@ -229,6 +218,37 @@ body {
   color: #666;
   font-size: 24px;
 }
+#wrapper #dynamic-content.art-full-page {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  width: 100%;
+  z-index: 101;
+}
+#wrapper #dynamic-content.art-full-page #close {
+  top: 30px;
+}
+#wrapper #dynamic-content.art-full-page article {
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+}
+#wrapper #dynamic-content.art-full-page article img {
+  border: 2px solid #000;
+  box-shadow: 5px 5px 5px #000;
+  display: block;
+}
+#wrapper #dynamic-content.art-full-page article #original-thumb {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+}
+#wrapper #dynamic-content.art-full-page article #original-thumb img {
+  height: 185px;
+  width: 155px;
+}
 #wrapper #art-page article {
   display: inline-block;
   margin: 0 -26px 37px 50px;
@@ -397,36 +417,5 @@ body {
   background: url(http://images.shaunbloom.com/icon-house-on.png) no-repeat scroll 0 0 transparent;
   text-decoration: underline;
   cursor: pointer;
-}
-#wrapper .art-full-page {
-  position: relative;
-  top: 0;
-  left: 0;
-  padding-top: 20px;
-  width: 100%;
-  z-index: 101;
-}
-#wrapper .art-full-page #close {
-  top: 30px;
-}
-#wrapper .art-full-page article {
-  position: relative;
-  width: 800px;
-  margin: 0 auto;
-}
-#wrapper .art-full-page article img {
-  border: 2px solid #000;
-  box-shadow: 5px 5px 5px #000;
-  display: block;
-}
-#wrapper .art-full-page article #original-thumb {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 3;
-}
-#wrapper .art-full-page article #original-thumb img {
-  height: 185px;
-  width: 155px;
 }
 
