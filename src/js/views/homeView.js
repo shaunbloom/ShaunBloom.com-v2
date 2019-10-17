@@ -1,9 +1,8 @@
-import { elements, clearContent } from '../base';
+import { elements, clearContent, fadeElement } from '../base';
 
 export const renderView = () => {
 	const markup = `
-		<article id="home-page" class="dynamic-content">
-			<div class="twinkle"></div>
+		<article id="home-page">
 			<table>
 		    	<tbody>
 		    		<tr>
@@ -34,8 +33,12 @@ export const renderView = () => {
 			</table>
 		</article>
 	`;
-	clearContent(elements.homePageBackground);
-	elements.homePageBackground.insertAdjacentHTML('beforeend', markup);
+	fadeElement(elements.homePageContent, 'out');
+	setTimeout(function() {
+        clearContent(elements.homePageContent);
+        elements.homePageContent.insertAdjacentHTML('beforeend', markup);
+        fadeElement(elements.homePageContent, 'in');
+    }, 1000);
 };
 
 export const updateSelectedFrameworkNav = (e) => {

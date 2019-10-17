@@ -3,7 +3,7 @@ import { elements } from '../base';
 export const renderView = (portfolioData) => {
 	const markup = `
 		<section id="portfolio-page" class="dynamic-content main-content">
-		<h1>ART</h1>
+		<h1>PORTFOLIO</h1>
 		${ renderArticle(portfolioData) }
 		</section>
 	`;

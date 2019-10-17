@@ -1,62 +1,69 @@
 //Global app controller
 import { elements, sections, clearContent, renderMainView, fadeElement } from './base';
-import * as homeView from './views/homeView';
 import * as artFullView from './views/artFullView';
 
+// Rende main view for the first time
+renderMainView(sections.HOME);
 
-homeView.renderView();
 
-
-// Framework Nav click event listener
+// FAMEWORK NAV
 elements.frameworkNav.addEventListener('click', e => {
 	e.preventDefault();
 	homeView.updateSelectedFrameworkNav(e);
 });
 
-// Main Nav click event listener
+
+
+// MAIN NAV
 elements.mainNav.addEventListener('click', e => {
-
-	console.log(e);
-
-	// Get section
+	// 1) Get section name
 	const section = e.target.dataset.section;
 
-	//Clear the current dynamic content
-	//clearContent(elements.dynamicContent);
-
-	// Render the new sections view
+	// 2) Render the new section view
 	renderMainView(section);
 });
 
-// Art work click event listener
+
+
+// ART THUMBNAILS
 elements.dynamicContent.addEventListener('click', e => {
-	// Get art work name
+	// 1) Get art work name
 	const name = e.target.dataset.name.replace('-', '');
 
-	// Clear the current dynamic content as we rerender upon closing the full page art
-	// 
-	
-	fadeElement(elements.dynamicWrapper, 'out');
-	//clearContent(elements.dynamicContent);
+	// 2) Clear the current dynamic content as we rerender
+	fadeElement(elements.homePageContent, 'out');
 
+	// 3) Add custom class to overide some of the dynamic
+	//    containers base css
 	elements.dynamicContent.classList.add('art-full-page');
-	// Render the new sections view
+	
+	// 4) Render the full page art view
 	artFullView.renderView(name);
 });
 
-elements.homePageBackground.addEventListener('click', e => {
-	e.preventDefault();
-	homeView.renderView();
+
+
+// HOME link from CONTACT page
+elements.homePageContent.addEventListener('click', e => {
+	// 1) Make sure it was the actual home-link that
+	//    was clicked on and not the background
+	if (e.target.id === "home-link") {
+		renderMainView(sections.HOME);
+	}
 });
 
+
+
+// CLOSE BUTTON
 elements.dynamicClose.addEventListener('click', e => {
+	// 1) Fade out dynamic content
 	fadeElement(elements.dynamicWrapper, 'out');
-	//elements.dynamicContent.classList.remove('art-full-page');
-	//elements.dynamicWrapper.style.display = 'none';
+
+	// 2) Wait second for the fade before clearing the content 
+	//    and fading the dynamic content container back in
+	setTimeout(function() {
+        clearContent(elements.dynamicContent);
+        fadeElement(elements.dynamicContent, 'in');
+    }, 1000);
 });
 
-// elements.artFullClose.addEventListener('click', e => {
-// 	fadeElement(elements.artFullWrapper, 'out');
-// 	clearContent(elements.artFullContent);
-// 	renderMainView(sections.ART);
-// });

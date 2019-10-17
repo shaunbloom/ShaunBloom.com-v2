@@ -7,7 +7,7 @@ export const renderView = (artData) => {
         ${ renderArticle(artData) }
         </section>
     `;
-    clearContent(elements.dynamicContent);
+    //clearContent(elements.dynamicContent);
   	elements.dynamicContent.insertAdjacentHTML('beforeend', markup);
 };
 

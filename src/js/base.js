@@ -1,3 +1,4 @@
+import * as homeView from './views/homeView';
 import * as artView from './views/artView';
 import * as contactView from './views/contactView';
 import * as resumeView from './views/resumeView';
@@ -12,14 +13,14 @@ export const elements = {
 	dynamicWrapper: document.querySelector('#dynamic-content'),
 	dynamicContent: document.querySelector('#dynamic-content .content'),
 	dynamicClose: document.querySelector('#dynamic-content #close'),
-	//artFullWrapper: document.querySelector('#art-full-page'),
-	//artFullContent: document.querySelector('#art-full-page .content'),
-	//artFullClose: document.querySelector('#art-full-page #close'),
-	homePageBackground: document.querySelector('.background')
+	homePage: document.querySelector('#home-page'),
+	contactPage: document.querySelector('#contact-page'),
+	homePageContent: document.querySelector('.background .content')
 
 };
 
 export const sections = {
+	HOME      : 'home',
 	ART       : 'art',
 	CONTACT   : 'contact',
 	RESUME    : 'resume',
@@ -31,40 +32,53 @@ export const noThumbnail = [
 	'man'
 ];
 
-export const fadeElement = (el, type) => {
-	if (type === "in") {
-		el.classList.remove("fade-out", "fade-out-init");
-		el.classList.add("fade-in");
-		return;
+export const fadeElement = (el, type, callback) => {
+	// Clearing the content can fail if the containers doesn't exist
+	try {
+		if (type === "in") {
+			el.classList.remove("fade-out", "fade-out-init");
+			el.classList.add("fade-in");
+			return;
+		}
+		el.classList.remove("fade-in");
+		el.classList.add('fade-out');
+		setTimeout(clearContent, 1000, elements.homePageContent, calback);
+		setTimeout(clearContent, 1000, elements.dynamicContent, calback);	
+	} catch (err) {
+		// Do nothing
 	}
-	el.classList.remove("fade-in");
-	el.classList.add('fade-out');
-	setTimeout(clearContent, 1000, elements.dynamicContent);
+	
 };
 
 export const displayElement = (el, display) => {
 	el.style.display = display;
-	//clearContent(el);
 };
 
 export const clearContent = el => {
-
+	// 1) Check if it's an array
 	if (typeof el === "array") {
 
+		// 2) Loop through all elements and clear the inner HTML
 		el.forEach(parent => {
 			parent.innerHTML = '';
-		})
+		});
 
 		return;
 	}
+
+	// 2) Otherwise just strip the innerHTML
 	el.innerHTML = '';
 };
 
 export const renderMainView = view => {
+
+	// 1) Render correct view
 	switch (view) {
 		case sections.ART:
-			//clearContent(elements.dynamicContent);
 			artView.renderView(artData);
+			break;
+		case sections.HOME:
+			homeView.renderView();
 			break;
 		case sections.CONTACT:
 			contactView.renderView();
@@ -77,9 +91,8 @@ export const renderMainView = view => {
 			break;
 	}
 
-	// Show dynamic content element for all but the Contact page
-	if (view !== sections.CONTACT) {
+	// 2) Show dynamic content element for all but the Contact page anc home page
+	if (view !== sections.CONTACT && view !== sections.HOME) {
 		fadeElement(elements.dynamicWrapper, 'in');
-		//elements.dynamicWrapper.style.display = 'block';
 	}
 };
