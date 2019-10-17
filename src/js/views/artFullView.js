@@ -10,7 +10,7 @@ export const renderView = name => {
 
     //clearContent(elements.dynamicContent);
   	elements.dynamicContent.insertAdjacentHTML('beforeend', markup);
-    fadeElement(elements.dynamicWrapper, 'in');
+    //fadeElement(elements.dynamicWrapper, 'in');
   	//elements.artFullWrapper.style.display = 'block';
 };
 

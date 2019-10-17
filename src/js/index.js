@@ -1,6 +1,5 @@
 //Global app controller
-import { elements, sections, clearContent, renderMainView, fadeElement } from './base';
-import * as artFullView from './views/artFullView';
+import { elements, sections, clearContent, renderMainView, fadeElement, classes } from './base';
 
 // Rende main view for the first time
 renderMainView(sections.HOME);
@@ -30,24 +29,32 @@ elements.dynamicContent.addEventListener('click', e => {
 	// 1) Get art work name
 	const name = e.target.dataset.name.replace('-', '');
 
-	// 2) Clear the current dynamic content as we rerender
-	fadeElement(elements.homePageContent, 'out');
+	// 2) Fade dynamic content (Art Page) out before clearing
+	fadeElement(elements.dynamicWrapper, 'out');
 
-	// 3) Add custom class to overide some of the dynamic
-	//    containers base css
-	elements.dynamicContent.classList.add('art-full-page');
-	
-	// 4) Render the full page art view
-	artFullView.renderView(name);
+
+	setTimeout(function() {
+		// 3) Clear dynamic content
+        clearContent(elements.dynamicContent);
+
+    	// 4) Add custom class to overide some of the dynamic containers base css    
+        elements.dynamicWrapper.classList.add(classes.ART_FULL);
+        elements.closeButton.classList.add(classes.ART_FULL);
+
+        // 5) Render the full page art view
+        renderMainView(sections.ART_FULL, name);
+
+        // 6) Fade full art into view
+        fadeElement(elements.dynamicWrapper, 'in');
+    }, 1000);
 });
 
 
 
 // HOME link from CONTACT page
 elements.homePageContent.addEventListener('click', e => {
-	// 1) Make sure it was the actual home-link that
-	//    was clicked on and not the background
-	if (e.target.id === "home-link") {
+	// 1) Supress background clicks as we only want to rendef from home-link clicks
+	if (e.target.id === classes.HOME_LINK) {
 		renderMainView(sections.HOME);
 	}
 });
@@ -56,14 +63,25 @@ elements.homePageContent.addEventListener('click', e => {
 
 // CLOSE BUTTON
 elements.dynamicClose.addEventListener('click', e => {
+	var isFullArtView = elements.closeButton.classList.contains(classes.ART_FULL);
+
 	// 1) Fade out dynamic content
 	fadeElement(elements.dynamicWrapper, 'out');
-
-	// 2) Wait second for the fade before clearing the content 
-	//    and fading the dynamic content container back in
+		
 	setTimeout(function() {
+		// 2) Cleardynamic content now that it's faded
         clearContent(elements.dynamicContent);
-        fadeElement(elements.dynamicContent, 'in');
+
+        // If this event is from the full art close button
+		if (isFullArtView) {
+			// 3) Remove full art override classes
+			elements.dynamicWrapper.classList.remove(classes.ART_FULL)
+			elements.closeButton.classList.remove(classes.ART_FULL)
+
+			// 4) Render the art page
+        	renderMainView(sections.ART);
+		}
     }, 1000);
 });
+
 
