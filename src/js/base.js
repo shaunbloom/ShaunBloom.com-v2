@@ -17,7 +17,8 @@ export const elements = {
 	homePage: document.querySelector('#home-page'),
 	contactPage: document.querySelector('#contact-page'),
 	homePageContent: document.querySelector('.background .content'),
-	closeButton: document.querySelector('#close')
+	closeButton: document.querySelector('#close'),
+	mainBody: document.querySelector('body')
 
 };
 

@@ -1,8 +1,22 @@
 //Global app controller
+import ImagePreloader from 'image-preloader';
 import { elements, sections, clearContent, renderMainView, fadeElement, classes } from './base';
+import { imgPreloadData} from './models/img-preload-data';
 
-// Rende main view for the first time
-renderMainView(sections.HOME);
+
+// Get image peload data
+const preloadData = imgPreloadData();
+
+// Get new image preloader
+const preloader = new ImagePreloader();
+
+// Preload all images
+preloader.preload(preloadData)
+.then(function(status){
+    // Render main view for the first time
+    fadeElement(elements.mainBody, 'in');
+	renderMainView(sections.HOME);
+});
 
 
 // FAMEWORK NAV
@@ -31,7 +45,6 @@ elements.dynamicContent.addEventListener('click', e => {
 
 	// 2) Fade dynamic content (Art Page) out before clearing
 	fadeElement(elements.dynamicWrapper, 'out');
-
 
 	setTimeout(function() {
 		// 3) Clear dynamic content
