@@ -1,9 +1,8 @@
-import { elements, clearContent } from '../base';
+import { elements, clearContent, fadeElement } from '../base';
 
 export const renderView = () => {
 	const markup = `
-		<article id="contact-page" class="dynamic-content contact-content">
-            <div class="twinkle"></div>            
+		<article id="contact-page">    
             <nav>
                 <ul>
                     <li><a id="home-link">Home</a></li>
@@ -34,7 +33,10 @@ export const renderView = () => {
             </tbody></table>
         </article>
 	`;
-
-    clearContent(elements.homePageBackground);
-	elements.homePageBackground.insertAdjacentHTML('beforeend', markup);
+    fadeElement(elements.homePageContent, 'out');
+    setTimeout(function() {
+        clearContent(elements.homePageContent);
+        elements.homePageContent.insertAdjacentHTML('beforeend', markup);
+        fadeElement(elements.homePageContent, 'in');
+    }, 1000);
 };
