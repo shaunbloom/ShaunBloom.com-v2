@@ -1,5 +1,6 @@
 import * as homeView from './views/homeView';
 import * as artView from './views/artView';
+import * as artFullView from './views/artFullView';
 import * as contactView from './views/contactView';
 import * as resumeView from './views/resumeView';
 import * as portfolioView from './views/portfolioView';
@@ -15,13 +16,20 @@ export const elements = {
 	dynamicClose: document.querySelector('#dynamic-content #close'),
 	homePage: document.querySelector('#home-page'),
 	contactPage: document.querySelector('#contact-page'),
-	homePageContent: document.querySelector('.background .content')
+	homePageContent: document.querySelector('.background .content'),
+	closeButton: document.querySelector('#close')
 
 };
+
+export const classes = {
+	ART_FULL  : 'art-full-page',
+	HOME_LINK : 'home-link' 
+}
 
 export const sections = {
 	HOME      : 'home',
 	ART       : 'art',
+	ART_FULL  : 'artfull',
 	CONTACT   : 'contact',
 	RESUME    : 'resume',
 	PORTFOLIO : 'portfolio'
@@ -70,12 +78,16 @@ export const clearContent = el => {
 	el.innerHTML = '';
 };
 
-export const renderMainView = view => {
+// ID is only used or the full view art  page
+export const renderMainView = (view, id) => {
 
 	// 1) Render correct view
 	switch (view) {
 		case sections.ART:
 			artView.renderView(artData);
+			break;
+		case sections.ART_FULL:
+			artFullView.renderView(id);
 			break;
 		case sections.HOME:
 			homeView.renderView();
