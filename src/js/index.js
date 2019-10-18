@@ -2,6 +2,7 @@
 import ImagePreloader from 'image-preloader';
 import { elements, sections, clearContent, renderMainView, fadeElement, classes } from './base';
 import { imgPreloadData} from './models/img-preload-data';
+import { activateTwinkle, setElementToLoaded } from './views/homeView';
 
 
 // Get image peload data
@@ -10,13 +11,36 @@ const preloadData = imgPreloadData();
 // Get new image preloader
 const preloader = new ImagePreloader();
 
-// Preload all images
-preloader.preload(preloadData)
-.then(function(status){
-    // Render main view for the first time
-    fadeElement(elements.mainBody, 'in');
+
+const init = () => {
+	// 1) Start preloading all images
+	preloader.preload(preloadData)
+	.then(function(status) {
+	    activateTwinkle();
+	});
+
+	// 2) Fade main body in
+	fadeElement(elements.mainBody, 'in');
+
+	// 3) Fade in top border of content frame and scroll down
+	setElementToLoaded(elements.mainContent, true);
+
+	// 4) Load home page background
+    setTimeout(setElementToLoaded, 1000, elements.background, true);
+
+    // 5) Load Navs into view
+    setTimeout(() => {
+    	elements.mainContent.classList.remove('overflow-hidden');
+    	setElementToLoaded(elements.frameworkNav, true);
+    	setElementToLoaded(elements.mainNav, true);
+    }, 2000);
+
+
+	// 6) Render home page content into view
 	renderMainView(sections.HOME);
-});
+}
+
+init();
 
 
 // FAMEWORK NAV

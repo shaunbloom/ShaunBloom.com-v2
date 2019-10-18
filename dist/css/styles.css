@@ -53,6 +53,10 @@ body {
 .fade-in {
   -webkit-animation: fade-in 1s linear;
 }
+.framework-nav.loaded {
+  margin-top: 0px;
+  transition: margin-top 0.7s ease-in;
+}
 .framework-nav {
   height: 1.87em;
   padding: 0.31em 0 0.31em;
@@ -60,7 +64,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  margin-top: -2.5em;
+  margin-top: -42px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .framework-nav ul {

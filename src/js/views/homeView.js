@@ -54,3 +54,24 @@ export const updateSelectedFrameworkNav = (e) => {
    	// Add selected class to the current framework nav link element
    	e.target.classList.add('selected');
 };
+
+export const scrollDownContentFrame = () => {
+
+};
+
+export const activateTwinkle = () => {
+	elements.twinkle.classList.add('loaded');
+
+    setTimeout(function () {
+    	elements.twinkle.classList.remove('loaded');
+    	elements.twinkle.classList.add('visible');
+    }, 500);
+};
+
+export const setElementToLoaded = (el, set) => {
+	if (set) {
+		el.classList.add('loaded');	
+		return;
+	} 
+	el.classList.remove('loaded');	
+};
