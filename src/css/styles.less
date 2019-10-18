@@ -39,6 +39,10 @@ body {
     -webkit-animation:fade-in 1s linear;
 }
 
+.framework-nav.loaded {
+  margin-top: 0px;
+  transition: margin-top 0.7s ease-in;
+}
 
 .framework-nav {
     height: 1.87em;
@@ -47,7 +51,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    margin-top: -2.5em;
+    margin-top: -42px;
     background-color: rgba(0, 0, 0, 0.5);
 
     ul {
@@ -91,8 +95,23 @@ body {
 	    right: 122px;
 	    top: 85px;
 	    width: 75px;
-	    display: block;
+	    opacity: 0;
 	}
+	.twinkle.loaded {
+	  opacity: 1;
+	  -webkit-transition: opacity .5s ease;
+	  -moz-transition: opacity .5s ease;
+	  -o-transition: opacity .5s ease;
+	  transition: opacity .5s ease;
+	}
+	.twinkle.visible {
+	  opacity: 0;
+	  -webkit-transition: opacity .5s ease;
+	  -moz-transition: opacity .5s ease;
+	  -o-transition: opacity .5s ease;
+	  transition: opacity .5s ease;
+	}
+
 
     #close {
     	background: url(http://images.shaunbloom.com/close-button.png) no-repeat scroll 0 0 transparent;
@@ -107,21 +126,37 @@ body {
     }
 
     #content {
-    	position: absolute;
-	    border: 1px solid #FFF;
-	    width: 43.75em;
-	    height: 25em;
-	    display: block;
-	    top: 14.65em;
-	    z-index: 90;
+    	border: 1px solid #FFF;
+		width: 700px;
+		height: 0;
+		display: block;
+		z-index: 90;
+		position: relative;
+		margin: 243px auto 0;
+		opacity: 0;
 
-	    #main {
+		&.overflow-hidden {
+			overflow: hidden;
+		}
+
+	    &.loaded {
+			height: 402px;
+			opacity: 1;
+		  	transition: all 2s ease;
+		}
+
+	    .main-nav {
 		    position: absolute;
-		    margin: 0 auto;
+		    margin: -45px auto;
 		    width: 43.75em;
 		    bottom: 25.31em;
     		height: 2.5em;
 		    padding: 0;
+
+		    &.loaded {
+				margin: -45px auto 0;
+			  	transition: margin 1s ease;
+			}
 
 		    nav ul {
 			    margin: 0;
@@ -158,9 +193,10 @@ body {
 		    width: 40.62em;
 		    background-position: 23.56em 0;
 
-		    /*.content {
-		    	visibility: hidden;
-		    }*/
+		    &.loaded {
+				opacity: 1;
+			  	transition: opacity 2s ease;
+			}
 	    }
 
 	    article {
@@ -182,7 +218,6 @@ body {
 	    width: 4.68em;
 	    display: block;
 	}
-
 
 	#home-page {
 		td.name {
