@@ -83,7 +83,7 @@ export const clearContent = el => {
 };
 
 // ID is only used or the full view art  page
-export const renderMainView = (view, id) => {
+export const renderMainView = (view, id, fromDynamicView) => {
 
 	// 1) Render correct view
 	switch (view) {
@@ -94,7 +94,7 @@ export const renderMainView = (view, id) => {
 			artFullView.renderView(id);
 			break;
 		case sections.HOME:
-			homeView.renderView();
+			homeView.renderView(fromDynamicView);
 			break;
 		case sections.CONTACT:
 			contactView.renderView();
@@ -109,6 +109,13 @@ export const renderMainView = (view, id) => {
 
 	// 2) Show dynamic content element for all but the Contact page anc home page
 	if (view !== sections.CONTACT && view !== sections.HOME) {
-		fadeElement(elements.dynamicWrapper, 'in');
+		fadeElement(elements.mainContent, 'out');
+	    setTimeout(function() {
+	    	displayElement(elements.mainContent, "none");
+	        fadeElement(elements.dynamicWrapper, 'in');
+	    }, 1000);
+	} else {
+		displayElement(elements.mainContent, "block");
+		fadeElement(elements.mainContent, 'in');
 	}
 };

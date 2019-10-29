@@ -14,6 +14,7 @@ module.exports = {
 	devServer: {
 		contentBase: './dist'
 	},
+	devtool: 'cheap-module-eval-sourcemap',
 	plugins: [
 		new HtmlWebpackPlugin({
 			filename: './index.html',
@@ -48,24 +49,6 @@ module.exports = {
                 { loader: 'less-loader', options: { sourceMap: true } }
             ],
         }
-        	
-	    // {
-     //        test: /\.css$/,
-     //    	use: [
-	    //       {
-	    //         loader: MiniCssExtractPlugin.loader,
-	    //         options: {
-	    //             // you can specify a publicPath here
-	    //             // by default it uses publicPath in webpackOptions.output
-	    //             //publicPath: path.resolve(__dirname, './dist/css'),
-	    //             hmr: process.env.NODE_ENV === 'development',
-	    //             // if hmr does not work, this is a forceful method.
-     //          		reloadAll: true
-	    //         }
-	    //     },
-     //      	'css-loader'
-     //      	]
-     //    }
      ]
 	}
 };

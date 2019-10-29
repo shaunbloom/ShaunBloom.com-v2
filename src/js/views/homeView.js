@@ -1,6 +1,6 @@
 import { elements, clearContent, fadeElement } from '../base';
 
-export const renderView = () => {
+export const renderView = (fromDynamicPage = false) => {
 	const markup = `
 		<article id="home-page">
 			<table>
@@ -33,7 +33,10 @@ export const renderView = () => {
 			</table>
 		</article>
 	`;
-	fadeElement(elements.homePageContent, 'out');
+
+	if (!fromDynamicPage) {
+		fadeElement(elements.homePageContent, 'out');
+	}
 	setTimeout(function() {
         clearContent(elements.homePageContent);
         elements.homePageContent.insertAdjacentHTML('beforeend', markup);
