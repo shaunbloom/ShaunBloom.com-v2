@@ -16,7 +16,7 @@ const init = () => {
 	// 1) Start preloading all images
 	preloader.preload(preloadData)
 	.then(function(status) {
-	    activateTwinkle();
+	    setTimeout(activateTwinkle, 2000, '');
 	});
 
 	// 2) Fade main body in
@@ -117,7 +117,9 @@ elements.dynamicClose.addEventListener('click', e => {
 
 			// 4) Render the art page
         	renderMainView(sections.ART);
+        	return;
 		}
+		renderMainView(sections.HOME, '', true);
     }, 1000);
 });
 
