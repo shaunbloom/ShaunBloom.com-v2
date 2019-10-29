@@ -58,10 +58,6 @@ export const updateSelectedFrameworkNav = (e) => {
    	e.target.classList.add('selected');
 };
 
-export const scrollDownContentFrame = () => {
-
-};
-
 export const activateTwinkle = () => {
 	elements.twinkle.classList.add('loaded');
 

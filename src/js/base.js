@@ -9,19 +9,19 @@ import { artData } from './models/art-data';
 import { resumeData } from './models/resume-data';
 
 export const elements = {
-	mainContent		: document.querySelector('#content'),
-	mainNav 		: document.querySelector('.main-nav'),
-	frameworkNav 	: document.querySelector('.framework-nav'),
+	mainContent     : document.querySelector('#content'),
+	mainNav         : document.querySelector('.main-nav'),
+	frameworkNav    : document.querySelector('.framework-nav'),
 	dynamicWrapper  : document.querySelector('#dynamic-content'),
-	dynamicContent 	: document.querySelector('#dynamic-content .content'),
-	dynamicClose 	: document.querySelector('#dynamic-content #close'),
-	homePage 		: document.querySelector('#home-page'),
-	contactPage 	: document.querySelector('#contact-page'),
+	dynamicContent  : document.querySelector('#dynamic-content .content'),
+	dynamicClose    : document.querySelector('#dynamic-content #close'),
+	homePage        : document.querySelector('#home-page'),
+	contactPage     : document.querySelector('#contact-page'),
 	background      : document.querySelector('.background'),
 	homePageContent : document.querySelector('.background .content'),
 	closeButton     : document.querySelector('#close'),
-	mainBody		: document.querySelector('body'),
-	twinkle			: document.querySelector('.twinkle')
+	mainBody        : document.querySelector('body'),
+	twinkle         : document.querySelector('.twinkle')
 
 };
 
