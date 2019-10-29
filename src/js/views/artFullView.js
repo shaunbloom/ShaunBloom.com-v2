@@ -7,11 +7,8 @@ export const renderView = name => {
     		<img name="${name}" src="http://images.shaunbloom.com/art/${name}-a-large.jpg">
     	</article>
     `;
-
-    //clearContent(elements.dynamicContent);
+    
   	elements.dynamicContent.insertAdjacentHTML('beforeend', markup);
-    //fadeElement(elements.dynamicWrapper, 'in');
-  	//elements.artFullWrapper.style.display = 'block';
 };
 
 const renderThumbnail = name => {
