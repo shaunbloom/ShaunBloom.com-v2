@@ -2,6 +2,6 @@
 <ol>
   <li>Clone repo locally</li>
   <li>npm install</li>
-  <li>npm run dev || npm run build (unmin vs min)</li>
-  <li>npm start (Should launch in browser)</li>
+  <li>npm run dev <strong>||</strong> npm run build <i>(unmin vs min)</i><</li>
+  <li>npm start <i>(Should launch in browser)</i></li>
 </ul>
