@@ -45,7 +45,7 @@ init();
 
 // FAMEWORK NAV
 elements.frameworkNav.addEventListener('click', e => {
-	e.preventDefault();
+	//e.preventDefault();
 	homeView.updateSelectedFrameworkNav(e);
 });
 
