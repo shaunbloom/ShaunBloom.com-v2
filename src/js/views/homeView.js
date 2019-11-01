@@ -23,7 +23,7 @@ export const renderView = (fromDynamicPage = false) => {
 			        </tr>
 			        <tr>
 				        <td class="name">Motto:</td>
-			    	    <td class="value pad">Don't cry over spilt milk, cry over David Lee Roth's hair now!</td>
+			    	    <td class="value pad">Don't cry over spilled milk, cry over David Lee Roth's hair now!</td>
 			        </tr>
 			        <tr>
 				        <td class="name">Objective:</td>
