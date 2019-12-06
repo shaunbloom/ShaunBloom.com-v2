@@ -24,11 +24,15 @@ export const renderView = () => {
                 </tr>
                 <tr>
                     <td class="name">Facebook:</td> 
-                    <td class="value">&nbsp;&nbsp;<a href="http://www.facebook.com/shaun.bloom" target="_blank">www.facebook.com/shaun.bloom</a></td>    
+                    <td class="value">&nbsp;&nbsp;<a href="http://www.facebook.com/shaun.bloom" target="_blank">www.facebook.com/shaunbloom</a></td>    
+                </tr>
+                <tr>
+                    <td class="name">LinkedIn:</td> 
+                    <td class="value">&nbsp;&nbsp;<a href="https://www.linkedin.com/in/shaun-bloom-7ab270a9/" target="_blank">www.linkedin.com/shaunbloom</a></td>    
                 </tr>
                 <tr>
                     <td class="name">Github:</td> 
-                    <td class="value">&nbsp;&nbsp;<a href="https://github.com/shaunbloom/" target="_blank">https://github.com/shaunbloom/</a></td>    
+                    <td class="value">&nbsp;&nbsp;<a href="https://github.com/shaunbloom/" target="_blank">www.github.com/shaunbloom</a></td>    
                 </tr>
             </tbody></table>
         </article>

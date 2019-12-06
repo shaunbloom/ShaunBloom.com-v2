@@ -3,7 +3,7 @@ import { elements } from '../base';
 export const renderView = (resumeData) => {
 	const markup = `
         <section id="resume-page" class="dynamic-content main-content">
-            <h1>Resume — <a href="http://www.shaunbloom.com/download/Shaun_Bloom_Resume.docx">DOWNLOAD</a></h1>
+            <h1>Resume — <a href="http://www.shaunbloom.com/download/Shaun_Bloom--Resume.docx">DOWNLOAD</a></h1>
             <p><strong>Objective:</strong> To use my experience and knowledge of web-based technologies, object oriented programming, and application development in a high tech solution based environment.</p>
                  
             <p><strong>Professional Experience:</strong></p>
