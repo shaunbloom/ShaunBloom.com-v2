@@ -45,7 +45,7 @@ export const noThumbnail = [
 ];
 
 export const fadeElement = (el, type, callback) => {
-	// Clearing the content can fail if the containers doesn't exist
+	// Clearing the content can fail if the container doesn't exist
 	try {
 		if (type === "in") {
 			el.classList.remove("fade-out", "fade-out-init");
@@ -100,7 +100,7 @@ export const renderMainView = (view, id, fromDynamicView) => {
 			contactView.renderView();
 			break;
 		case sections.RESUME:
-			resumeView.renderView(resumeData);
+			resumeView.renderStaticView(resumeData);
 			break;
 		case sections.PORTFOLIO:
 			portfolioView.renderView(portfolioData);
